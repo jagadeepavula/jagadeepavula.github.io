@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jagadeep Avula — AI/ML Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d1117;
+    --ink-soft:#1c2230;
+    --paper:#f5f3ee;
+    --paper-2:#ecebe4;
+    --line:#d4d2c8;
+    --accent:#2f6f5e;      /* deep teal-green */
+    --accent-2:#c65a2e;    /* burnt sienna, used sparingly */
+    --muted:#5a6472;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+  /* ---- nav ---- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(245,243,238,.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  .brand{font-family:'Space Grotesk';font-weight:700;letter-spacing:-.02em;font-size:1.05rem}
+  .brand span{color:var(--accent)}
+  .navlinks{display:flex;gap:26px}
+  .navlinks a{
+    font-size:.9rem;color:var(--muted);text-decoration:none;font-weight:500;
+    transition:color .2s;
+  }
+  .navlinks a:hover{color:var(--ink)}
+  @media(max-width:600px){.navlinks{gap:16px}.navlinks a{font-size:.8rem}}
+
+  /* ---- hero ---- */
+  header.hero{padding:88px 0 64px;border-bottom:1px solid var(--line)}
+  .eyebrow{
+    font-family:'JetBrains Mono';font-size:.78rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:20px;
+  }
+  h1{
+    font-family:'Space Grotesk';font-weight:700;
+    font-size:clamp(2.4rem,6vw,3.9rem);line-height:1.04;letter-spacing:-.03em;
+    margin-bottom:22px;
+  }
+  h1 .thin{color:var(--muted);font-weight:400}
+  .tagline{
+    font-size:clamp(1.05rem,2.2vw,1.28rem);color:var(--ink-soft);
+    max-width:640px;font-weight:400;
+  }
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;
+  }
+  .chip{
+    font-family:'JetBrains Mono';font-size:.76rem;
+    background:var(--white);border:1px solid var(--line);
+    padding:7px 13px;border-radius:2px;color:var(--ink-soft);
+  }
+
+  /* ---- sections ---- */
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:32px}
+  .sec-num{font-family:'JetBrains Mono';font-size:.85rem;color:var(--accent)}
+  h2{font-family:'Space Grotesk';font-weight:600;font-size:1.7rem;letter-spacing:-.02em}
+  .lead{font-size:1.06rem;color:var(--ink-soft);max-width:680px;margin-bottom:16px}
+  .prose p{max-width:680px;margin-bottom:14px;color:var(--ink-soft)}
+
+  /* ---- value prop ---- */
+  .vp{
+    background:var(--ink);color:var(--paper);
+    padding:38px 34px;border-radius:4px;position:relative;overflow:hidden;
+  }
+  .vp::before{
+    content:"";position:absolute;top:0;left:0;width:4px;height:100%;
+    background:var(--accent);
+  }
+  .vp .label{
+    font-family:'JetBrains Mono';font-size:.74rem;letter-spacing:.14em;
+    text-transform:uppercase;color:#8fb8ac;margin-bottom:16px;
+  }
+  .vp p{font-family:'Space Grotesk';font-size:clamp(1.15rem,2.6vw,1.5rem);line-height:1.42;font-weight:500}
+
+  /* ---- artifact ---- */
+  .artifact{
+    background:var(--white);border:1px solid var(--line);border-radius:4px;
+    overflow:hidden;
+  }
+  .artifact-top{
+    padding:26px 30px;border-bottom:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;
+  }
+  .artifact-top h3{font-family:'Space Grotesk';font-size:1.32rem;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+  .artifact-top .sub{color:var(--muted);font-size:.92rem}
+  .tag-live{
+    font-family:'JetBrains Mono';font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+    background:var(--accent);color:var(--white);padding:6px 11px;border-radius:2px;white-space:nowrap;
+  }
+  .artifact-links{display:flex;gap:12px;flex-wrap:wrap;padding:20px 30px 6px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.9rem;font-weight:600;text-decoration:none;
+    padding:11px 18px;border-radius:3px;transition:transform .15s,box-shadow .15s;
+  }
+  .btn-primary{background:var(--accent);color:var(--white)}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(47,111,94,.28)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .field-grid{padding:14px 30px 30px}
+  .field{padding:18px 0;border-top:1px solid var(--paper-2)}
+  .field:first-child{border-top:none}
+  .field .k{
+    font-family:'JetBrains Mono';font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:7px;
+  }
+  .field .v{color:var(--ink-soft);font-size:.98rem}
+  .field .v strong{color:var(--ink);font-weight:600}
+
+  .placeholder{
+    margin-top:22px;padding:22px;border:1px dashed var(--line);border-radius:4px;
+    text-align:center;color:var(--muted);font-size:.92rem;
+    font-family:'JetBrains Mono';
+  }
+
+  footer{padding:44px 0 60px;text-align:center}
+  footer .fnote{color:var(--muted);font-size:.86rem}
+  footer a{color:var(--accent);text-decoration:none}
+
+  a.inline{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+  a.inline:hover{border-color:var(--accent)}
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Jagadeep <span>Avula</span></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#value">Value</a>
+      <a href="#artifacts">Artifacts</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">AI Software Developer</div>
+    <h1>Building production AI <br><span class="thin">that people can trust.</span></h1>
+    <p class="tagline">Generative AI, RAG architectures, and agentic systems — turning large-scale document and data challenges into reliable, real-world solutions.</p>
+    <div class="hero-meta">
+      <span class="chip">RAG &amp; Vector Search</span>
+      <span class="chip">LangChain / LangGraph</span>
+      <span class="chip">Azure AI Services</span>
+      <span class="chip">Agentic AI · MCP</span>
+      <span class="chip">AWS Solutions Architect</span>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2>About</h2>
+    </div>
+    <div class="prose">
+      <p>I'm an AI Software Developer with over four years of software engineering experience and more than two years focused on building production-grade generative AI systems. I currently develop enterprise AI solutions at Microsoft (through Quadrant Technologies), where I architect systems using Azure AI Services — including Azure OpenAI, Document Intelligence, and AI Search — that process over 100,000 documents monthly and have improved data extraction accuracy from 70% to 95%.</p>
+      <p>My work centers on RAG architectures, vector search, and agentic AI. I've built LangGraph-based agent systems handling 10,000+ daily queries, pioneered Model Context Protocol (MCP) integrations for seamless tool orchestration, and delivered enterprise implementations achieving 40–60% efficiency gains. I hold an M.Eng. in Computer Science from Oregon State University and an AWS Certified Solutions Architect credential.</p>
+      <p>This portfolio, developed through Indiana Wesleyan University's AIML program, documents my continued growth across the machine learning lifecycle — from foundational model training and neural network concepts to data challenges, evaluation, and the ethical dimensions of deploying AI responsibly. Each artifact reflects how I think through real-world AI/ML problems and the value I bring to teams building effective, trustworthy machine learning solutions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="value">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2>Value Proposition</h2>
+    </div>
+    <div class="vp">
+      <div class="label">What I bring</div>
+      <p>As an AI Software Developer specializing in generative AI, RAG architectures, and agentic systems, I help enterprises turn large-scale document and data challenges into reliable, production-ready AI solutions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="artifacts">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <h2>Artifacts</h2>
+    </div>
+    <p class="lead">Work developed as part of AIML-500: Machine Learning Fundamentals at Indiana Wesleyan University. Each artifact represents applied learning across the machine learning lifecycle.</p>
+
+    <!-- ARTIFACT 1 -->
+    <div class="artifact">
+      <div class="artifact-top">
+        <div>
+          <h3>ScamGuard AI: A Scam-Detection Assistant</h3>
+          <div class="sub">Artifact 1 · Custom GPT + Multi-Model Comparison · Team of 4</div>
+        </div>
+        <span class="tag-live">Live Demo</span>
+      </div>
+
+      <div class="artifact-links">
+        <a class="btn btn-primary" href="https://chatgpt.com/g/g-UGan9IONA-scam-scanner" target="_blank" rel="noopener">Open ScamGuard →</a>
+        <a class="btn btn-ghost" href="https://chatgpt.com/share/6a526c2f-017c-83ea-9e78-888b198bf2c1" target="_blank" rel="noopener">View a test conversation</a>
+      </div>
+
+      <div class="field-grid">
+        <div class="field">
+          <div class="k">Objective</div>
+          <div class="v">To design and build a functioning AI-powered scam-awareness chatbot that helps older adults and non-technical users evaluate suspicious messages, links, emails, job offers, and phone calls — applying prompt engineering, multi-model comparison, and the Design Thinking framework to solve both the technical problem of scam detection and the human problem of fear and uncertainty.</div>
+        </div>
+        <div class="field">
+          <div class="k">Process</div>
+          <div class="v">Working as a four-person team, we followed the five stages of Design Thinking (Empathize, Define, Ideate, Prototype, Test). We engineered a structured prompt casting the model as a library help-desk scam advisor, then tested it across three leading LLMs using a realistic USPS phishing scenario. Comparing outputs revealed that detection alone wasn't enough — empathy, honest handling of uncertainty, and a manageable number of action steps mattered just as much. We used those lessons to refine the final prompt, built the ScamGuard custom GPT, and validated it against four scam scenarios (delivery phishing, fake bank alert, scam phone call, and fraudulent job offer), scoring each on six criteria.</div>
+        </div>
+        <div class="field">
+          <div class="k">Tools &amp; Technologies</div>
+          <div class="v">ChatGPT (custom GPT builder), Claude and Gemini for comparative testing, prompt engineering, and the Design Thinking framework.</div>
+        </div>
+        <div class="field">
+          <div class="k">Value</div>
+          <div class="v">ScamGuard shows how generative AI can be applied responsibly to a real social problem — protecting vulnerable people from fraud — by pairing accurate scam detection with empathetic, uncertainty-aware communication. It demonstrates the ability to move from user research through prototyping to structured evaluation, and to think critically about the ethical limits of AI rather than treating a model's output as ground truth.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="placeholder">// Artifacts 2–5 will be added as they are completed throughout the course.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="fnote">Jagadeep Avula · AIML-500 Professional Portfolio · Indiana Wesleyan University<br>
+    <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> · built with GitHub Pages</p>
+  </div>
+</footer>
+
+</body>
+</html>
