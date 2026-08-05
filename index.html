@@ -315,7 +315,47 @@
       </div>
     </div>
 
-    <div class="placeholder">// Artifacts 4–5 will be added as they are completed throughout the course.</div>
+    <!-- ARTIFACT 4 -->
+    <div class="artifact" style="margin-top:28px">
+      <div class="artifact-top">
+        <div>
+          <h3>Diagnosing Real-World Data Challenges: An AI Coaching Dialogue</h3>
+          <div class="sub">Artifact 4 · Applied Technical Reasoning</div>
+        </div>
+        <span class="tag-live" style="background:#5a5a8a">Dialogue</span>
+      </div>
+
+      <div class="field-grid">
+        <div class="field">
+          <div class="k">Objective</div>
+          <div class="v">To work through three progressively difficult, real-world machine learning data challenges (missing data, class imbalance, and data/concept drift) in a live, unscripted dialogue with an AI coach, demonstrating the ability to reason through ambiguous, practitioner-level problems rather than recite textbook definitions.</div>
+        </div>
+        <div class="field">
+          <div class="k">Process</div>
+          <div class="v">I engaged in a guided conversation covering three scenarios: diagnosing non-random missing survey data in a churn model, correcting a fraud detection model that showed misleadingly high accuracy despite missing 60% of real fraud cases, and diagnosing data versus concept drift in a healthcare readmission model. For each, I proposed an approach, justified my reasoning, and responded to follow-up questions that pushed the analysis deeper, covering statistical validation techniques, calibration methods, and decision frameworks for when to retrain versus recalibrate a production model.</div>
+        </div>
+        <div class="field">
+          <div class="k">Tools &amp; Technologies</div>
+          <div class="v">AI-guided Socratic dialogue (SchoolAI), applied statistics and machine learning concepts: MNAR/MCAR analysis, SMOTE, class weighting, precision-recall optimization, Platt scaling, isotonic regression, population stability index.</div>
+        </div>
+        <div class="field">
+          <div class="k">Value</div>
+          <div class="v">This artifact demonstrates applied, practitioner-level reasoning under real-time pressure, not just familiarity with concepts, but the judgment to diagnose ambiguous problems, justify tradeoffs, and know which technique fits which situation. It shows the kind of critical thinking that separates someone who has memorized ML terminology from someone who can actually be trusted to make production decisions.</div>
+        </div>
+        <div class="field">
+          <div class="k">Evidence: Dialogue Excerpt</div>
+          <div class="v" style="max-height:340px;overflow-y:auto;background:var(--paper-2);padding:16px;border-radius:4px;font-size:.9rem;line-height:1.65">
+            <strong>Coach:</strong> Your dataset has 50,000 customer records... the satisfaction survey column is missing for about 35% of customers. How would you handle this missing data?<br><br>
+            <strong>Me:</strong> First, I'd want to understand why the satisfaction survey data is missing before deciding how to handle it, since 35% missing on one column while everything else is under 2% is a big enough gap to suggest it's not random... If missingness is MNAR, the missingness itself is probably predictive of churn, so I wouldn't want to just impute a mean value and lose that signal. Instead, I'd add a binary flag column indicating whether the survey was completed...<br><br>
+            <strong>Coach:</strong> Excellent reasoning. You're thinking exactly like a practitioner... Recognizing that missingness itself can be predictive (MNAR)... Proposing the binary flag approach rather than just imputing away the signal.<br><br>
+            <em>[Full dialogue continued through fraud detection class imbalance and healthcare model drift diagnosis, covering SMOTE risks, threshold optimization, and calibration validation.]</em><br><br>
+            <strong>Coach (final scenario):</strong> Using AUC recovery as the diagnostic for what kind of drift you're dealing with. That's clever, if calibration fixes it, it was data drift. If AUC stays low even after calibration, it's concept drift and retrain is necessary. That's exactly the right decision framework.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="placeholder">// Artifact 5 will be added as it is completed.</div>
   </div>
 </section>
 
