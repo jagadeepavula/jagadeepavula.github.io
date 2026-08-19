@@ -81,6 +81,22 @@
   .lead{font-size:1.06rem;color:var(--ink-soft);max-width:680px;margin-bottom:16px}
   .prose p{max-width:680px;margin-bottom:14px;color:var(--ink-soft)}
 
+  /* ---- skills grid ---- */
+  .skills-grid{
+    margin-top:36px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px 32px;
+  }
+  @media(max-width:700px){.skills-grid{grid-template-columns:1fr}}
+  .skill-cat-label{
+    font-family:'JetBrains Mono';font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:10px;
+  }
+  .skill-tags{display:flex;flex-wrap:wrap;gap:7px}
+  .tag-pill{
+    font-family:'JetBrains Mono';font-size:.76rem;
+    background:var(--white);border:1px solid var(--line);color:var(--ink-soft);
+    padding:5px 11px;border-radius:20px;white-space:nowrap;
+  }
+
   /* ---- value prop ---- */
   .vp{
     background:var(--ink);color:var(--paper);
@@ -107,6 +123,8 @@
   }
   .artifact-top h3{font-family:'Space Grotesk';font-size:1.32rem;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
   .artifact-top .sub{color:var(--muted);font-size:.92rem}
+  .quick-take{font-size:.98rem;color:var(--ink-soft);padding:14px 30px;background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .quick-take strong{color:var(--ink)}
   .tag-live{
     font-family:'JetBrains Mono';font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
     background:var(--accent);color:var(--white);padding:6px 11px;border-radius:2px;white-space:nowrap;
@@ -188,6 +206,45 @@
       <p>My work centers on RAG architectures, vector search, and agentic AI. I've built LangGraph-based agent systems handling 10,000+ daily queries, pioneered Model Context Protocol (MCP) integrations for seamless tool orchestration, and delivered enterprise implementations achieving 40–60% efficiency gains. I hold an M.Eng. in Computer Science from Oregon State University and an AWS Certified Solutions Architect credential.</p>
       <p>This portfolio, developed through Indiana Wesleyan University's AIML program, documents my continued growth across the machine learning lifecycle — from foundational model training and neural network concepts to data challenges, evaluation, and the ethical dimensions of deploying AI responsibly. Each artifact reflects how I think through real-world AI/ML problems and the value I bring to teams building effective, trustworthy machine learning solutions.</p>
     </div>
+
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <div class="skill-cat-label">AI &amp; ML</div>
+        <div class="skill-tags">
+          <span class="tag-pill">LangChain</span><span class="tag-pill">LangGraph</span><span class="tag-pill">LangSmith</span><span class="tag-pill">LangFuse</span><span class="tag-pill">RAG</span><span class="tag-pill">Vector Embeddings</span><span class="tag-pill">OpenAI APIs</span><span class="tag-pill">Prompt Engineering</span><span class="tag-pill">Semantic Search</span><span class="tag-pill">Model Context Protocol (MCP)</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">Cloud &amp; AI Services</div>
+        <div class="skill-tags">
+          <span class="tag-pill">Azure OpenAI</span><span class="tag-pill">Document Intelligence</span><span class="tag-pill">Azure AI Search</span><span class="tag-pill">Cosmos DB</span><span class="tag-pill">AWS (EC2, S3, Lambda)</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">Programming Languages</div>
+        <div class="skill-tags">
+          <span class="tag-pill">Python</span><span class="tag-pill">JavaScript</span><span class="tag-pill">TypeScript</span><span class="tag-pill">Java</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">Frontend</div>
+        <div class="skill-tags">
+          <span class="tag-pill">React</span><span class="tag-pill">Redux</span><span class="tag-pill">Next.js</span><span class="tag-pill">HTML5 / CSS3</span><span class="tag-pill">Tailwind CSS</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">Backend &amp; DevOps</div>
+        <div class="skill-tags">
+          <span class="tag-pill">Node.js</span><span class="tag-pill">FastAPI</span><span class="tag-pill">RESTful APIs</span><span class="tag-pill">Microservices</span><span class="tag-pill">Docker</span><span class="tag-pill">Linux</span><span class="tag-pill">CI/CD</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">Database</div>
+        <div class="skill-tags">
+          <span class="tag-pill">PostgreSQL</span><span class="tag-pill">pgvector</span><span class="tag-pill">MongoDB</span><span class="tag-pill">ChromaDB</span><span class="tag-pill">Firebase</span><span class="tag-pill">Supabase</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -226,6 +283,8 @@
         </div>
         <span class="tag-live">Live Demo</span>
       </div>
+
+      <div class="quick-take"><strong>Quick take:</strong> A custom GPT that helps non-technical users spot scams, built and validated by comparing three LLMs on real phishing scenarios.</div>
 
       <div class="artifact-links">
         <a class="btn btn-primary" href="https://chatgpt.com/g/g-UGan9IONA-scam-scanner" target="_blank" rel="noopener">Open ScamGuard →</a>
@@ -274,6 +333,8 @@
         <span class="tag-live" style="background:var(--accent-2)">Report</span>
       </div>
 
+      <div class="quick-take"><strong>Quick take:</strong> A client-ready brief comparing when to use machine learning vs. deep learning, using two real business examples to show the reasoning.</div>
+
       <div class="artifact-links">
         <a class="btn btn-primary" href="ML_vs_DL_Report.docx" target="_blank" rel="noopener">Download Report →</a>
       </div>
@@ -319,6 +380,8 @@
         </div>
         <span class="tag-live" style="background:#8a6d3b">Explainer</span>
       </div>
+
+      <div class="quick-take"><strong>Quick take:</strong> A plain-language explanation of how neural networks learn, built using deliberate teaching techniques rather than jargon.</div>
 
       <div class="field-grid">
         <div class="field">
@@ -366,6 +429,8 @@
         <span class="tag-live" style="background:#5a5a8a">Dialogue</span>
       </div>
 
+      <div class="quick-take"><strong>Quick take:</strong> A live, unscripted problem-solving session covering missing data, class imbalance, and model drift, three of the trickiest issues in real ML work.</div>
+
       <div class="field-grid">
         <div class="field">
           <div class="k">Introduction</div>
@@ -408,7 +473,54 @@
       </div>
     </div>
 
-    <div class="placeholder">// Artifact 5 will be added as it is completed.</div>
+    <!-- ARTIFACT 5 -->
+    <div class="artifact" style="margin-top:28px">
+      <div class="artifact-top">
+        <div>
+          <h3>The Applied AI Brief: A Commercial AI Newsletter</h3>
+          <div class="sub">Artifact 5 · Industry Research &amp; Business Communication</div>
+        </div>
+        <span class="tag-live" style="background:var(--accent-2)">Newsletter</span>
+      </div>
+
+      <div class="quick-take"><strong>Quick take:</strong> A styled newsletter breaking down how AI is actually being used commercially right now across enterprise, healthcare, and software development.</div>
+
+      <div class="artifact-links">
+        <a class="btn btn-primary" href="AI_Commercial_Applications_Newsletter.pdf" target="_blank" rel="noopener">Read the Newsletter →</a>
+      </div>
+
+      <div class="field-grid">
+        <div class="field">
+          <div class="k">Introduction</div>
+          <div class="v">A researched, subscriber-style newsletter analyzing how AI is being commercially deployed right now across three distinct industries, built to be engaging and accessible to a general business audience rather than a technical one.</div>
+        </div>
+        <div class="field">
+          <div class="k">Objective</div>
+          <div class="v">To research current (within-the-month) commercial AI developments across three industries and explain their real business impact, how companies are using AI to make better decisions, streamline operations, or enhance processes, in a format a non-technical subscriber could genuinely enjoy reading.</div>
+        </div>
+        <div class="field">
+          <div class="k">Process</div>
+          <div class="v">I researched recent, verifiable developments in enterprise AI operations, healthcare AI, and AI-powered software development, drawing on primary sources (company announcements, industry press, and analyst data) from the past month. For each industry, I identified a specific, real product or event, gathered supporting data, and wrote an analysis section explicitly separating what happened from why it matters for business decision-making. I then designed the piece as a styled newsletter with data visualizations, rather than a plain written report, to match the assignment's audience and format requirements.</div>
+        </div>
+        <div class="field">
+          <div class="k">Tools &amp; Technologies</div>
+          <div class="v">Claude (Anthropic) for research and drafting assistance, web research across industry and news sources, Python/Matplotlib for custom data visualizations, HTML/CSS for newsletter design and layout.</div>
+        </div>
+        <div class="field">
+          <div class="k">Unique Value</div>
+          <div class="v">Demonstrates the ability to research current, real-world AI developments quickly and translate them into clear, decision-relevant insight for a business audience, distinct from the technical builder and analyst skills shown elsewhere in this portfolio.</div>
+        </div>
+        <div class="field">
+          <div class="k">Relevance</div>
+          <div class="v">This is exactly the kind of communication a technical AI professional is often asked for in practice: staying current on the field and explaining, clearly and without jargon, what a development actually means for a business's decisions and operations.</div>
+        </div>
+        <div class="field">
+          <div class="k">References</div>
+          <div class="v">OpenAI; Gartner 2026 CIO and Technology Executive Survey; Bipartisan Policy Center; McGuireWoods; Bloomberg; TechCrunch; Nipralo Technologies. Full citations included in the newsletter.</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
